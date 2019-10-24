@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>LAVAGE CSTECH</title>
+
+  <!-- Favicons -->
+  <link href="{{ asset ('build1/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset ('build1/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ asset ('build1/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <!--external css-->
+  <link href="{{ asset ('build1/lib/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="{{ asset ('build1/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset ('build1/css/style-responsive.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+    Author: DebYeo    
+    Date: 15/10/2019
+  ======================================================= -->
+</head>
+
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!--logo start-->
+      <a href="index.html" class="logo"><b>L-<span>CSTECH</span></b></a>
+      <!--logo end-->
+      
+      <div class="top-menu">
+        <ul class="nav pull-right top-menu">
+          <li><a class="nav-link" href="{{path('logout')}}">Déconnexion</a></li>
+          
+        </ul>
+      </div>
+    </header>
+    <!--header end-->

@@ -1,0 +1,61 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}LavagePrestation index{% endblock %}
+
+{% block body %} 
+
+<section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt">
+          <div class="col-sm-12">
+            <section class="panel">
+              <header class="panel-heading">                
+
+                <h1>Creer une nouvelle prestation </h1>
+              </header>
+              <div class="panel-body">
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Libelle de la prestation</th>
+                <th>Prix unitaire</th>
+                <th>Date d'enregistrement</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lavage_prestation in lavage_prestations %}
+            <tr>
+                <td>{{ lavage_prestation.id }}</td>
+                <td>{{ lavage_prestation.libelle }}</td>
+                <td>{{ lavage_prestation.prix }}</td>
+                <td>{{ lavage_prestation.date|localizeddate('none','none','fr',null,'EEEE d MMMM Y')}}</td>
+                <td>
+                    <button type="button" class="btn btn-theme"><a href="{{ path('lavage_prestation_show', {'id': lavage_prestation.id}) }}">Voir plus</a></button>
+                    <button type="button" class="btn btn-theme"><a href="{{ path('lavage_prestation_edit', {'id': lavage_prestation.id}) }}">Editer</a></button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune donnee trouvee</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <a href="{{ path('lavage_prestation_new') }}" style="font-size:16px; color:red;">Creer une nouvelle prestation</a>
+
+    
+    </div>
+            </section>
+          </div>
+        </div>
+        <!-- page end-->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+
+{% endblock %}

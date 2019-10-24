@@ -1,0 +1,41 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Liste des utilisateurs {% endblock %}
+
+{% block body %} 
+
+<section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt">
+          <div class="col-sm-12">
+            <section class="panel">
+              <header class="panel-heading">                
+
+                <h1>Creer une nouvel utilisateur </h1>
+              </header>
+              <div class="panel-body">
+
+<table class="table">
+        <ul>
+    {% for user in users if user.active %}
+        <li>{{ user.username }}</li>
+    {% else %}
+        <li>No users found</li>
+    {% endfor %}
+</ul>
+    </table>
+    <hr>
+    <a href="{{ path('user_new') }}" style="font-size:16px; color:red;">Creer une nouvelle prestation</a>
+
+    
+    </div>
+            </section>
+          </div>
+        </div>
+        <!-- page end-->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+
+{% endblock %}

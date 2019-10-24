@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('lavage_prestation_delete', {'id': lavage_prestation.id}) }}" 
+onsubmit="return confirm('Etes-vous sur de vouloir supprimer cette prestation?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ lavage_prestation.id) }}">
+     <button class="btn btn-theme" style="margin-top:10px" value="{{ csrf_token('delete' ~ lavage_prestation.id) }}">{{ button_label|default('Supprimer') }}</button>
+
+</form>
