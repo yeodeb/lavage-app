@@ -17,7 +17,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-    <body id="{% block body_id %}{% endblock %}">
+    <body id="{% block body_id %}{% endblock %}" style="">
 
         {% block header %}
             <!--header id="header" class="bck1 border-bottom">
@@ -50,12 +50,12 @@
                             <a class="nav-link" href="{{path('logout')}}">Déconnexion</a>
                         </li>
                     {% else %}
-                        <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
+                        <!--li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
                             <a class="nav-link" href="{{path('login')}}">Connexion</a>
                         </li>
                         <li class="nav-item {% if mainNavRegistration is defined %}active{% endif %}">
                             <a class="nav-link" href="{{path('app_registration_register')}}">Inscription</a>
-                        </li>
+                        </li-->
                     {% endif %}
                 </ul>
             </nav>
