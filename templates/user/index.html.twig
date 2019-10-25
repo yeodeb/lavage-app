@@ -1,0 +1,64 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Liste des utilisateurs {% endblock %}
+
+{% block body %} 
+
+<section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt">
+          <div class="col-sm-12">
+            <section class="panel">
+              <header class="panel-heading">                
+
+                <h1>Creer une nouvel utilisateur </h1>
+              </header>
+              <div class="panel-body">
+
+
+              <table class="table">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Email</th>
+                <th>Password crypte</th>
+                <th>Roles</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in user %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>
+                    <button type="button" class="btn btn-theme"><a href="{{ path('user_show', {'id': user.id}) }}">Voir plus</a></button>
+                    <button type="button" class="btn btn-theme"><a href="{{ path('user_edit', {'id': user.id}) }}">Editer</a></button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <hr>
+    <a href="{{ path('user_new') }}" style="font-size:16px; color:red;">Creer un nouvel utilisateur</a>
+
+    
+    </div>
+            </section>
+          </div>
+        </div>
+        <!-- page end-->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+
+{% endblock %}

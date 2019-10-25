@@ -78,14 +78,11 @@ class User implements UserInterface, \Serializable {
     }
 
     public function getRoles() {
-        if (empty($this->roles)) {
-            return ['ROLE_USER'];
-        }
         return $this->roles;
     }
 
-    function addRole($role) {
-        $this->roles[] = $role;
+    function setRoles($roles) {
+        $this->roles = $roles;
     }
 
     public function eraseCredentials() {

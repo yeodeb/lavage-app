@@ -1,0 +1,32 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Utilisateurs{% endblock %}
+
+{% block body %} 
+
+<section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt">
+          <div class="col-sm-12">
+            <section class="panel">
+              <header class="panel-heading">                
+
+                <h1>Creer un nouvel utilisateur</h1>
+              </header>
+              <div class="panel-body">
+
+    {{ include('user/_form.html.twig') }}
+<br>
+    <a href="{{ path('user_index') }}" style="font-size:16px; color:red;">Retour a la liste</a>
+
+    </div>
+            </section>
+          </div>
+        </div>
+        <!-- page end-->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+ 
+{% endblock %}

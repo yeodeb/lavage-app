@@ -11,7 +11,7 @@ class MemberController extends Controller {
      * @Route("/member")
      */
     public function index() {
-        return $this->render('member/index.html.twig', ['mainNavMember'=>true, 'title'=>'Espace Membre']);
+        return $this->render('member/index.html.twig');
     }
     /**
      * @Route("/historique")

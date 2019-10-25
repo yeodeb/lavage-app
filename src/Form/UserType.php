@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class UserType extends AbstractType {
 
@@ -18,7 +19,28 @@ class UserType extends AbstractType {
                     'first_options' => array('label' => 'Mot de passe'),
                     'second_options' => array('label' => 'Confirmation du mot de passe'),
                 ))
-                ->add('submit', SubmitType::class, ['label'=>'Envoyer', 'attr'=>['class'=>'btn-primary btn-block']])
+                ->add('roles', ChoiceType::class, array(
+                    'attr'  =>  array('class' => 'form-control',
+                    'style' => 'margin:5px 0;'),
+                    'choices' => 
+                    array
+                    (
+                        'ROLE_ADMIN' => array
+                        (
+                            'Oui' => 'ROLE_ADMIN',
+                        ),
+                        'ROLE_USER' => array
+                        (
+                            'Oui' => 'ROLE_USER'
+                        ),
+                    ) 
+                    ,
+                    'multiple' => true,
+                    'required' => true,
+                    )
+                    
+                )
+                //->add('submit', SubmitType::class, ['label'=>'Envoyer', 'attr'=>['class'=>'btn-primary btn-block']])
         ;
     }
 }

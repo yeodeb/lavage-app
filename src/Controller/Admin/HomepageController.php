@@ -16,7 +16,7 @@ class HomepageController extends Controller {
      * @Route("/admin")
      */
     public function index() {
-        return $this->render('admin/homepage/index.html.twig', ['mainNavAdmin' => true, 'title' => 'Espace Admin']);
+        return $this->render('admin/homepage/index.html.twig');
     }
 
     /**
