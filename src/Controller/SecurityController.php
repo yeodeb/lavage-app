@@ -27,6 +27,7 @@ class SecurityController extends Controller {
                     'form' => $form->createView(),
                     'last_username' => $lastUsername,
                     'error' => $error,
+                    'redirect' => $request->query->get('redirect') ?: null,
         ]);
     }
 
